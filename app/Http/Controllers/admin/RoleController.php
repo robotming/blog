@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
@@ -27,5 +28,12 @@ class RoleController extends Controller
         $roles = $user->getRoleNames(); // Returns a collection
 
         dd($permissionNames, $roles);
+    }
+
+    public function userList () {
+
+        $uses = app(User::class)->get()->toArray();
+
+        dd($uses);
     }
 }
