@@ -29,13 +29,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/index', 'AdminController@index');
     Route::get('/test', 'AdminController@test');
 
-
     // 权限管理
     Route::get('/user/list', 'admin\UserController@list');
     Route::any('/user/add', 'admin\UserController@userAdd');
     Route::any('/user/update', 'admin\UserController@update');
     Route::get('/user/detail', 'admin\UserController@detail');
     Route::get('/user/del', 'admin\UserController@delete');
+    Route::get('/user/permission', 'admin\UserController@permission');
 
     Route::get('/role/list', 'RoleController@roleList');
     Route::get('/permission/list', 'RoleController@permissionList');

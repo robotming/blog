@@ -10,6 +10,7 @@
         <td>{{ $user['email'] }}</td>
         <td>
             <a href="{{ url('admin/user/update?id=') . $user['id'] }}">编辑</a>
+            <a href="javascript:window.open('{{ url('admin/user/permission?id=') . $user['id'] }}', '', width=100, height=100)">权限</a>
             <a href="{{ url('admin/user/del?id=') . $user['id'] }}">删除</a>
         </td>
     </tr>

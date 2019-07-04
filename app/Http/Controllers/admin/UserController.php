@@ -153,4 +153,10 @@ class UserController extends Controller
         $res = app(User::class)->where(['id' => $id])->delete();
         return redirect('admin/user/list');
     }
+
+    public function permission(Request $request) {
+        $id = (int)$request->get('id');
+
+        echo 1;
+    }
 }
