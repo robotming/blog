@@ -20,8 +20,16 @@ Route::get('redis/add', 'CartController@redisAdd');
 Route::get('redis/del', 'CartController@redisDel');
 //
 
+Route::get('thrift/list', 'IndexController@thrift');
 
+// 权限管理
+Route::prefix('role')->group(function () {
+    Route::get('/user/list', 'RoleController@userList');
+    Route::get('/role/list', 'RoleController@roleList');
+    Route::get('/permission/list', 'RoleController@permissionList');
+});
 
+// 后台管理
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index');
     Route::get('/index', 'AdminController@index');
