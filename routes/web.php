@@ -13,6 +13,12 @@
 
 Route::get('/', "IndexController@index");
 
+Route::get('/article/index', "ArticleController@index");
+Route::any('/article/add', "ArticleController@add");
+Route::get('/article/update', "ArticleController@update");
+Route::get('/article/del', "ArticleController@del");
+Route::get('/article/detail', "ArticleController@detail");
+
 //
 Route::get('cart/add', 'CartController@addGoods2');
 Route::get('redis/list', 'CartController@redisList');
@@ -24,18 +30,18 @@ Route::get('thrift/list', 'IndexController@thrift');
 
 
 // 后台管理
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->namespace('admin')->group(function () {
     Route::get('/', 'AdminController@index');
     Route::get('/index', 'AdminController@index');
     Route::get('/test', 'AdminController@test');
 
     // 权限管理
-    Route::get('/user/list', 'admin\UserController@list');
-    Route::any('/user/add', 'admin\UserController@userAdd');
-    Route::any('/user/update', 'admin\UserController@update');
-    Route::get('/user/detail', 'admin\UserController@detail');
-    Route::get('/user/del', 'admin\UserController@delete');
-    Route::get('/user/permission', 'admin\UserController@permission');
+    Route::get('/user/list', 'UserController@list');
+    Route::any('/user/add', 'UserController@userAdd');
+    Route::any('/user/update', 'UserController@update');
+    Route::get('/user/detail', 'UserController@detail');
+    Route::get('/user/del', 'UserController@delete');
+    Route::get('/user/permission', 'UserController@permission');
 
     Route::get('/role/list', 'RoleController@roleList');
     Route::get('/permission/list', 'RoleController@permissionList');
