@@ -16,7 +16,7 @@ class ArticleController extends Controller
      * 文章列表
      */
     public function index(Request $request) {
-        $list = app(Article::class)->get()->toArray();
+        $list = app(Article::class)->orderby('id', 'desc')->get()->toArray();
 
         return response()->view('admin/article/index', [
             'list' => $list
