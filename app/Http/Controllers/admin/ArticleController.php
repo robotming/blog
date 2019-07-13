@@ -3,11 +3,12 @@
  * 文章
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use App\Models\Article;
 use App\Models\ArticleCate;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ArticleController extends Controller
 {
@@ -17,7 +18,7 @@ class ArticleController extends Controller
     public function index(Request $request) {
         $list = app(Article::class)->get()->toArray();
 
-        return response()->view('article/index', [
+        return response()->view('admin/article/index', [
             'list' => $list
         ]);
     }
@@ -40,13 +41,13 @@ class ArticleController extends Controller
                 'content' => $content,
                 'cat_id' => $catId,
             ]);
-            return redirect('article/index');
+            return redirect('admin/article/index');
         }
 
         // 获取分类
         $catList = app(ArticleCate::class)->get()->toArray();
 
-        return response()->view('article/add', [
+        return response()->view('admin/article/add', [
             'cat_list' => $catList
         ]);
     }

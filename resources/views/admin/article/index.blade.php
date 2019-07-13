@@ -14,4 +14,4 @@
     @endforeach
 </table>
 
-<a href="{{ url('article/add') }}">添加</a>
+<a href="{{ url('admin/article/add') }}">添加</a>

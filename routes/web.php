@@ -13,11 +13,7 @@
 
 Route::get('/', "IndexController@index");
 
-Route::get('/article/index', "ArticleController@index");
-Route::any('/article/add', "ArticleController@add");
-Route::get('/article/update', "ArticleController@update");
-Route::get('/article/del', "ArticleController@del");
-Route::get('/article/detail', "ArticleController@detail");
+
 
 //
 Route::get('cart/add', 'CartController@addGoods2');
@@ -34,6 +30,13 @@ Route::prefix('admin')->namespace('admin')->group(function () {
     Route::get('/', 'AdminController@index');
     Route::get('/index', 'AdminController@index');
     Route::get('/test', 'AdminController@test');
+
+
+    Route::get('/article/index', "ArticleController@index");
+    Route::any('/article/add', "ArticleController@add");
+    Route::get('/article/update', "ArticleController@update");
+    Route::get('/article/del', "ArticleController@del");
+    Route::get('/article/detail', "ArticleController@detail");
 
     // 权限管理
     Route::get('/user/list', 'UserController@list');

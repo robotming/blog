@@ -1,4 +1,4 @@
-<form action="{{ url('article/add') }}" method="post">
+<form action="{{ url('admin/article/add') }}" method="post">
     <table border="1" cellpadding="0" cellspacing="0">
         {{ csrf_field() }}
         <tr>
@@ -12,7 +12,7 @@
             <td>
                 <select name="cat_id">
                     @foreach ($cat_list as $k => $item)
-                    <option value="{{ $item['id'] }}">{{ $item['cat_name'] }}</option>
+                    <option value="{{ $item['cat_id'] }}">{{ $item['cat_name'] }}</option>
                     @endforeach
                 </select>
             </td>
