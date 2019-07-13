@@ -12,17 +12,33 @@ use App\Http\Controllers\Controller;
 
 class ArticleController extends Controller
 {
+
     /**
      * 文章列表
+     * @param Request $request
+     * @return mixed
      */
     public function index(Request $request) {
-        $list = app(Article::class)->orderby('id', 'desc')->get()->toArray();
+        $page = $request->get('page', 1);
+        $pageSize = $request->get('limit', 2);
+
+        $offset = ($page - 1) * $pageSize;
+        $list = app(Article::class)->offset($offset)->limit($pageSize)->orderby('id', 'desc')->get()->toArray();
+        $total = app(Article::class)->count();
 
         return response()->view('admin/article/index', [
-            'list' => $list
+            'list' => $list,
+            'total' => $total,
+            'page' => $page,
+            'limit' => $pageSize,
         ]);
     }
 
+    /**
+     * 添加
+     * @param Request $request
+     * @return mixed
+     */
     public function add (Request $request) {
         if ($request->method() == 'POST') {
             if (!$request->filled('title')) {
