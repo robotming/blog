@@ -16,7 +16,7 @@
                 <div class="form-group">
                     <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">标题</label>
                     <div class="col-lg-10">
-                        <input type="text" name="title" class="form-control" placeholder="标题">
+                        <input type="text" name="title" class="form-control" placeholder="标题" autocomplete="off">
                     </div>
                 </div>
                 <div class="form-group">

@@ -1,15 +1,16 @@
 {{-- 计算页码 --}}
 <?php
-echo $total;
-echo $page;
-
-$currentPage = ceil($total / $limit);
+$totalPage = ceil($total / $limit);
 ?>
 <ul class="pagination pagination-lg">
-    <li><a href="{{ url('admin/article/index') . '?page=1' }}">«</a></li>
+    <li><a href="{{ '?page=1' }}">«</a></li>
 
     @for($i = 0;$i < 5; $i++)
-        <li><a href="{{ url('admin/article/index') . '?page=$currentPage' }}">{{ $i - $currentPage }}</a></li>
+        <?php
+            $p = $page + $i - 2;
+            if ($p < 1 || $p > $totalPage) continue;
+        ?>
+        <li><a href="{{ "?page=$p" }}">{{ $p }}</a></li>
     @endfor
-    <li><a href="{{ url('admin/article/index') . '?page=1' }}">»</a></li>
+    <li><a href="{{ "?page=$totalPage" }}">»</a></li>
 </ul>

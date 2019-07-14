@@ -8,7 +8,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="{{asset('/template/img/favicon.png')}}">
 
-    <title>FlatLab - Flat & Responsive Bootstrap Admin Template</title>
+    <title>后台管理</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('/template/css/bootstrap.min.css')}}" rel="stylesheet">

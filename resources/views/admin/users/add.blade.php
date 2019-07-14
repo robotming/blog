@@ -1,16 +1,49 @@
-<form action="{{ url('admin/user/add') }}" method="post">
-    <table border="1" cellpadding="0" cellspacing="0">
-        {{ csrf_field() }}
-        <tr>
-            <th>姓名</th>
-            <th>邮箱</th>
-            <th>密码</th>
-        </tr>
-        <tr>
-            <td><input type="text" name="name" autocomplete="off" /></td>
-            <td><input type="email" name="email" autocomplete="off" /></td>
-            <td><input type="password" name="password" autocomplete="off" /></td>
-        </tr>
-    </table>
-    <input type="submit">
-</form>
+@extends('public/layout')
+@section('content')
+    <div class="row state-overview">
+        <ul class="breadcrumb">
+            <li><a href="#"><i class="icon-home"></i> 首页</a></li>
+            <li><a href="#">用户</a></li>
+            <li class="active">添加</li>
+        </ul>
+    </div>
+    <div class="row"></div>
+    <div class="row"></div>
+    <div class="row">
+        <div class="col-lg-8">
+            <form action="{{ url('admin/user/add') }}" method="post" class="form-horizontal">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">姓名</label>
+                    <div class="col-lg-10">
+                        <input type="text" name="name" class="form-control" placeholder="姓名" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">邮箱</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control ckeditor" name="email" rows="6"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail1" class="col-lg-2 col-sm-2 control-label">密码</label>
+                    <div class="col-lg-2">
+                        <input type="text" name="password" class="form-control" placeholder="密码" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <input type="submit" class="btn btn-danger" value="提交" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4">
+            <a class="btn btn-shadow btn-info" href="{{ url('admin/user/list') }}">返回列表</a>
+        </div>
+    </div>
+@endsection
+
+
+
+

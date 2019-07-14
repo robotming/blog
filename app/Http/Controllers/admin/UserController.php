@@ -5,9 +5,6 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
-use Thrift\BatchMutation;
 
 class UserController extends Controller
 {
@@ -34,12 +31,19 @@ class UserController extends Controller
      * 用户列表
      * @return \Illuminate\Http\Response
      */
-    public function list() {
+    public function list(Request $request) {
+        $page = $request->get('page', 1);
+        $pageSize = $request->get('limit', 2);
 
+        $offset = ($page - 1) * $pageSize;
         $uses = app(User::class)->get()->toArray();
+        $total = app(User::class)->count();
 
         return response()->view('admin/users/index', [
-            'users' => $uses
+            'users' => $uses,
+            'total' => $total,
+            'page' => $page,
+            'limit' => $pageSize,
         ]);
     }
 
