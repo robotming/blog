@@ -158,9 +158,15 @@ class UserController extends Controller
         return redirect('admin/user/list');
     }
 
+    /**
+     * 用户权限
+     * @param Request $request
+     */
     public function permission(Request $request) {
         $id = (int)$request->get('id');
-
-        echo 1;
+        $user = User::find($id);
+        $permissionNames = $user->getPermissionNames();
+        $roles = $user->getRoleNames(); // Returns a collection
+        dd($permissionNames->toArray(), $roles->toArray());
     }
 }

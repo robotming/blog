@@ -4,7 +4,7 @@
         <ul class="breadcrumb">
             <li><a href="#"><i class="icon-home"></i> 首页</a></li>
             <li><a href="#">用户</a></li>
-            <li class="active">添加</li>
+            <li class="active">编辑</li>
         </ul>
     </div>
     <div class="row"></div>
