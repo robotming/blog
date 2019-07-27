@@ -29,8 +29,8 @@ return [
         'python_get_list_url' => 'http://106.75.114.96:5001/test/hbase/scan',
 	],
 	'local' => [
-		'host' => '192.168.168.128',//hbase beta单机外网
-		'port' => 9090,
+		'host' => '0.0.0.0',//hbase beta单机外网
+		'port' => 9099,
 		'article_table' => 'dev_pool_news',
 		'list_table' => 'dev_basket_news_list',
 		'editor_table' => 'dev_basket_news_editor',
