@@ -25,7 +25,6 @@ Route::get('redis/add', 'CartController@redisAdd');
 Route::get('redis/del', 'CartController@redisDel');
 //
 
-Route::get('thrift/list', 'IndexController@thrift');
 
 
 // 后台管理
