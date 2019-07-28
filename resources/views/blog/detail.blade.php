@@ -59,7 +59,7 @@
 		            <!-- middle 分类列表 -->
 			        <div class="col-md-4">
 			            <h3 class="widgettitle">项目分类</h3>
-						<ul class="middle-catetory-list">
+						<ul class="middle-catetory-list" id="middle-catetory-list">
 							@foreach($article_cate as $k => $v)
 								<li>
 									<a>{{ $v['cat_name'] }}</a>
@@ -83,10 +83,10 @@
 					<!-- start right -->
 					<div class="col-md-6 right-widget">
 						<div class="widget">
-							<h3 class="widgettitle">推荐文章</h3>
+							<h3 class="widgettitle">项目大类</h3>
 							<ul>
-								@foreach($recommend_list as $k => $v)
-								<li><a href="#" title="{{ $v['title'] }}">{{ $v['title'] }}</a></li>
+								@foreach($article_cate as $k => $v)
+									<li><a href="#" title="{{ $v['cat_name'] }}">{{ $v['cat_name'] }}</a></li>
 								@endforeach
 							</ul>
 							{{--<h3 class="widgettitle">web前端&设计群</h3>--}}
@@ -116,3 +116,19 @@
 		</div>
 	</body>
 </html>
+
+<script>
+    var html = '';
+    $(function () {
+	    getCategory(1);
+	});
+
+	function getCategory(cat_id) {
+        $.post("{{ url('/blog/category/list') }}", {cat_id: cat_id}, function (res){
+            for (let i in res){
+                html += '<li><a>' + i['cat_name'] + '</a></li>';
+			}
+            $('#middle-catetory-list').html(html);
+        }, 'json');
+	}
+</script>

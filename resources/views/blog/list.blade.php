@@ -93,7 +93,7 @@
 					<!-- start right -->
 					<div class="col-md-6 right-widget">
 						<div class="widget">
-							<h3 class="widgettitle">推荐文章</h3>
+							<h3 class="widgettitle">项目大类</h3>
 							<ul>
                                 @foreach($recommend_list as $k => $v)
                                     <li><a href="#" title="{{ $v['title'] }}">{{ $v['title'] }}</a></li>

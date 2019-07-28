@@ -10,10 +10,10 @@ class ArticleService{
      * 获取文章分类列表
      * @return mixed
      */
-    public function articleCategoryList() {
-        $articleCate = app(ArticleCate::class)->get()->toArray();
+    public function articleCategoryList($where) {
+        $articleCate = app(ArticleCate::class)->where($where)->get()->toArray();
 
-        array_shift($articleCate);
+//        array_shift($articleCate);
         return $articleCate;
     }
 

@@ -47,7 +47,9 @@ class BlogController extends Controller
      */
     public function detail(Request $request) {
         $id = (int)$request->route('id');
-        $articleCate = app(ArticleService::class)->articleCategoryList();
+        $articleCate = app(ArticleService::class)->articleCategoryList([
+            'pid' => 0
+        ]);
 
         $article = app(Article::class)->find($id)->toArray();
 
@@ -58,5 +60,18 @@ class BlogController extends Controller
             'article_cate' => $articleCate,
             'recommend_list' => $recommends,
         ]);
+    }
+
+    /**
+     * 文章分类
+     * @param Request $request
+     * @return mixed
+     */
+    public function categoryList(Request $request) {
+        $catId = (int)$request->post('cat_id');
+        $articleCate = app(ArticleService::class)->articleCategoryList([
+            'pid' => $catId
+        ]);
+        return response()->json($articleCate);
     }
 }
