@@ -1,0 +1,158 @@
+*::-moz-selection {
+    background: #e6e6d5 none repeat scroll 0 0;
+    color: #696a52;
+}
+body {
+    -moz-text-size-adjust: none;
+    background: #e5e6d0 url("../images/bg.jpg") repeat scroll 0 0;
+    color: #2e3030;
+    font-family: STheiti,Verdana,微软雅黑,宋体,Geneva,sans-serif;
+    font-size: 12px;
+    min-width: 1110px;
+}
+ul{list-style: none; margin: 0;padding: 0;}
+a{color: #2c2e2e;}
+a:hover{text-decoration: none;}
+ul li {margin: 0;}
+h2{color: #333;}
+
+/*left*/
+.left-widget .widgettitle{
+    margin-bottom: 7px;
+    padding: 0 10px 14px 0;
+    background: url("../images/nav-tit-bg.gif") no-repeat 0 bottom;
+    font-size: 14px;
+    text-align: right;
+    font-weight: bold;
+}
+.left-widget .middle-catetory-list a{
+    display: block;
+    padding: 0 0 0 22px;
+    /* line-height: 24px; */
+    background: url("../images/li.gif") no-repeat 12px 7px;
+    -moz-transition: all 0.26s ease-out 0s;
+    transition: all 400ms ease;
+}
+
+.left-widget .middle-catetory-list a:hover{
+    padding-left: 27px;
+}
+
+.right-widget .widgettitle{
+    font-size: 14px;
+    text-align: center;
+    height: 26px;
+    line-height: 25px;
+    background: url("../images/h3-bg.png") no-repeat center 0;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 0 rgba(0,0,0,.5);
+}
+.right-widget li {
+    padding: 8px;
+    margin: 0 10px;
+    background: url("../images/line.gif") repeat-x 0 bottom;
+    text-align: center;
+}
+.right-widget .group-list li{
+    float: left;
+    display: inline;
+    width: 110px;
+    margin: 0 3px 0 10px;
+}
+.tagcloud a{
+    float: left;
+    display: inline;
+    background: #dddec2;
+    line-height: 17px;
+    color: #2c2e2e;
+    padding: 3px 15px;
+    margin: 0 10px 10px 0;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+.tagcloud a:hover{
+    background: #696b53;
+    color: #fff;
+}
+.post{
+    text-shadow: 0 1px rgba(255,255,255,.75);
+    font-family: STheiti, Verdana, å®‹ä½“, Geneva, sans-serif;
+    padding: 30px;
+    margin-left: 30px;
+    border: 1px solid #d9d9bd;
+    background-color: #f0f0e3;
+    font-size: 14px;
+    line-height: 1.8em;
+    color: #696a52;
+    border-radius: 8px;
+    -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, .05),0px 1px 0 rgba(255,255,255,.6) inset;
+    -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, .05), 0px 1px 0 rgba(255,255,255,.6) inset;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, .05), 0px 1px 0 rgba(255,255,255,.6) inset;
+    -webkit-transition-delay: initial;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-property: all;
+    -webkit-transition-timing-function: initial;
+}
+
+
+
+/* list */
+article{
+    background: url("../images/post-entry-bg.png") no-repeat 0 9px;
+    margin-top: 30px;
+}
+.post-list:hover {
+    background-color: #fafaf3;
+}
+.post-list{
+    text-shadow: 0 1px rgba(255,255,255,.75);
+    font-family: STheiti, Verdana, 宋体, Geneva, sans-serif;
+    padding: 30px;
+    /*margin-left: 30px;*/
+    border: 1px solid #d9d9bd;
+    background-color: #f0f0e3;
+    font-size: 14px;
+    line-height: 1.8em;
+    color: #696a52;
+    border-radius: 8px;
+    -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, .05),0px 1px 0 rgba(255,255,255,.6) inset;
+    -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, .05), 0px 1px 0 rgba(255,255,255,.6) inset;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, .05), 0px 1px 0 rgba(255,255,255,.6) inset;
+    -webkit-transition-delay: initial;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-property: all;
+    -webkit-transition-timing-function: initial;
+    margin-bottom: 15px;
+}
+
+.info {
+    display: block;
+    font-size: 11px;
+    color: #b4b5b2;
+    padding: 8px 0;
+    margin-bottom: 10px;
+    background: url("../images/line.gif") repeat-x 0 bottom;
+}
+.info a, .post-readme a, .post a {
+    color: #c45894;
+    transition: all 0.26s ease-out;
+}
+
+.post-list img {
+    display: block;
+    padding: 3px;
+    margin: 0 auto;
+    min-height: 24px;
+    min-width: 24px;
+    max-width: 500px;
+    border: 1px solid #b9baa6;
+    border-radius: 3px;
+    background-color: #e6e6d5;
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    background: url("../images/loading.gif") no-repeat 50% 50%;
+}
+.post-list p {
+    margin: 1.75em 0;
+    word-break: break-word;
+}
